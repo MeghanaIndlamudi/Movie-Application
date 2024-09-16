@@ -180,7 +180,7 @@ Any time you wanna use Webclient in your application add a maven dependency like
 
 `List<Rating> ratings=restTemplate.getForObject("http://localhost:8083/ratingsdata/users/" + rating.getMovie(),ParameterizedTypeReference<ResponseWrapper<T>>(){});`
 
-## So the final thing [In our case](https://www.notion.so/In-our-case-ba7b3570820d4ba28cedd108cbaac160?pvs=21)  is here:
+## So the final thing is here:
 
 ```java
 package io.javabrains.movie_catalog_service.resources;
