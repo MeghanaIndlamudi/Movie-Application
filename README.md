@@ -1,8 +1,3 @@
-[Micro Services Level-1 (Communication and Service  fff843ef4f1680c38649fe818731c3ba.md](https://github.com/user-attachments/files/17016419/Micro.Services.Level-1.Communication.and.Service.fff843ef4f1680c38649fe818731c3ba.md)
-![Untitled 1](https://github.com/user-attachments/assets/6c04f4b8-5bdc-4626-9c08-94579115ea8a)
-![Untitled 2](https://github.com/user-attachments/assets/f70c2e59-dc5b-4e3d-afd5-9e4306b10c3e)
-![Untitled 3](https://github.com/user-attachments/assets/f0a68f19-d19a-477f-a94c-6f92ac5ab9f4)
-![Untitled 4](https://github.com/user-attachments/assets/318ce50c-1814-44f6-ab60-a733570a23c1)
-![Untitled 5](https://github.com/user-attachments/assets/9c5be490-d10a-4a4d-8670-539788dc5718)
-![Untitled 6](https://github.com/user-attachments/assets/53b70f2c-2522-4ece-b938-19207adf439d)
-![Untitled](https://github.com/user-attachments/assets/1fd94133-fadf-4510-be49-e7a5c5fcef7a)
+
+f8f377a9-6d89-4527-a1bd-c5e1ea7ce1a3_Micro_Services_Level-1_(Communication_and_Service_Discovery).pdf
+
