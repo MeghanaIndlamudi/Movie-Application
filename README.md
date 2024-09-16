@@ -26,7 +26,7 @@ Each of these services can be developed, deployed, and scaled independently, all
 
 ## What is the key difference between monolithic and microservices?
 
-![Untitled](Untitled.png)
+![Untitled](https://github.com/user-attachments/assets/b58ab5c8-c710-4049-9a7f-68d929c86ce4)
 
 ---
 
@@ -62,15 +62,15 @@ Each of these services can be developed, deployed, and scaled independently, all
 
 # Building an Application
 
-![Create an API for this front-end application](Untitled%201.png)
+![Untitled 1](https://github.com/user-attachments/assets/d560ea3e-93c9-42a1-9e0b-c21a5e485856)
 
 Create an API for this front-end application
 
-![This is our API and it return an object with id, name, description and user rating.](Untitled%202.png)
+![This is our API and it return an object with id, name, description and user rating.](https://github.com/user-attachments/assets/a5bce176-f8bd-45e5-8215-68b3fb16828b)
 
 This is our API and it return an object with id, name, description and user rating.
 
-![Untitled](Untitled%203.png)
+![Untitled 3](https://github.com/user-attachments/assets/c43ecc4d-3b46-4551-9c9d-6a73e84bb369)
 
 - create 3 Spring Boot Projects
 - Build movie catalog service API
@@ -256,15 +256,15 @@ Service discovery is used to dynamically discover and interact with different mi
 
 </aside>
 
-![Untitled](Untitled%204.png)
+![Untitled 4](https://github.com/user-attachments/assets/e76f6f1c-dbed-4d21-818d-694d0e27c2e9)
 
 Client-side service discovery.
 
 ← Step 1                       step 2  →
 
-![Untitled](Untitled%205.png)
+![Untitled 5](https://github.com/user-attachments/assets/4820d732-e54a-462c-8668-cfbd811a43fe)
 
-![Server side Service Discovery](Untitled%206.png)
+![Server side Service Discovery](https://github.com/user-attachments/assets/ec282147-8890-4c43-9471-4b7a63eae869)
 
 Server side Service Discovery
 
