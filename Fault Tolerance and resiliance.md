@@ -17,7 +17,7 @@ How many faults can a system tolerate and bounce back from a fault indicates how
 
 **Resilience** is the broader concept that encompasses fault tolerance. It refers to the system's ability to recover from and adapt to failures, maintaining acceptable levels of service. While fault tolerance focuses on preventing failure from impacting the system, resilience is about how the system reacts and recovers when failures do occur.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/051e0ce8-5b8b-4896-82b8-6d13d8d78174/c71773cf-65c1-426c-acfa-ae3aaf5da93b/Untitled.png)
+![Untitled](https://github.com/user-attachments/assets/37eb7356-c4d5-41fe-8823-c970dde4691b)
 
 We now have linked it to the external API with the below code and result looks like the right side image.
 
@@ -41,7 +41,7 @@ public class MovieResource {
 }
 ```
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/051e0ce8-5b8b-4896-82b8-6d13d8d78174/f5884587-2221-44ef-94d3-bd4fd5cc6844/image.png)
+![image](https://github.com/user-attachments/assets/6adb2b73-bf25-4fff-acee-2de4029261d7)
 
 # How do we make this resilient?
 
@@ -58,13 +58,13 @@ Example if rating-service goes down what do we do.
 
 (Its a much much bigger problem.) 
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/051e0ce8-5b8b-4896-82b8-6d13d8d78174/e33cf244-0541-4cbc-a2a0-2a1227ed18b4/image.png)
+![image 1](https://github.com/user-attachments/assets/3f2ac065-7c8a-4d55-b605-036ea2c76b13)
 
 ### **How threads work in a web server(tomcat)?**
 
 Let’s say we have a web server and a request comes in then the web server has to process the request to get back a response. It spins up a thread to handle it. Tomcat says I need to create a thread to handle this request once done thread goes away. So when a request come in thread is created and it takes sometime to process it and by the time the thread is done there are multiple requests comes in simultaneously. If the requests come in faster than the threads are getting freed up then your resources get consumed. Tomcat server has a max number of concurrent threads that’s allowed. If that happens all the resources are consumed and we can’t do anything else. That’s why it gets slowed down. 
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/051e0ce8-5b8b-4896-82b8-6d13d8d78174/c349f8fd-d39f-424d-b3fa-763cbdd30fbf/image.png)
+![image 2](https://github.com/user-attachments/assets/31d5017c-e8da-4791-a4f0-18e1b70962a9)
 
 In the context of microservices. This is a web server that handles request A and request B. In case of A when a request comes it frees up soon but since B is slow when a request of B comes in it stays there for long time, more requests of B comes and max limit is reached, now when a request of A comes it has to wait until all other guys are cleared.
 **Example:** Movie-catalog-service has two calls movie-info-service(B) and ratings-data-service(A) . Based on the above scenario the reason for ratings-data-service being slow is clarified.
@@ -104,7 +104,7 @@ It solves a problem little bit. But in the pace of time out like 3 seconds and 3
 - Deactivate the "problem" component so that it doesn't affect downstream components
 </aside>
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/051e0ce8-5b8b-4896-82b8-6d13d8d78174/3a75b4ee-43cd-4f84-8c1e-3c2fcde47737/image.png)
+![image 3](https://github.com/user-attachments/assets/81008932-cf38-4364-90fe-356b81bb05d3)
 
 **How can we apply this to our micro service?**
 
@@ -160,7 +160,7 @@ We got 3 failures so now the circuit is gonna sleep(hold on to send requests for
 
 **Circuit needs to be tripped. Now what? How do you handle the requests**
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/051e0ce8-5b8b-4896-82b8-6d13d8d78174/15381d04-82ce-4792-b3e9-2f1487f1177a/image.png)
+![image 4](https://github.com/user-attachments/assets/8963ab62-aee9-4350-8f0e-459c3f181b0f)
 
 <aside>
 💡 **The answer is We need to fallback.**
@@ -177,7 +177,7 @@ We got 3 failures so now the circuit is gonna sleep(hold on to send requests for
 - circuit breakers provide with fallback functionality.
 - Automatic Recovery.
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/051e0ce8-5b8b-4896-82b8-6d13d8d78174/3fdbbad3-0751-4b30-9a7d-aea626c48841/image.png)
+![image 5](https://github.com/user-attachments/assets/4743c566-f73a-4018-afed-677a41675fba)
 
 To implement all for this we have a framework called **HYSTRIX.**
 
@@ -262,7 +262,7 @@ public class MovieCatalogResource {
 
 ### How does this work?
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/051e0ce8-5b8b-4896-82b8-6d13d8d78174/af7c4415-c3e5-4deb-8461-a9d07d951c0f/image.png)
+![image 6](https://github.com/user-attachments/assets/1a86d4e9-552f-4d7f-8542-b578f7ad0f1a)
 
 1. You have your API class and the method inside the API class which is annotated with @HystrixCommand.
 2. Hystrix wraps your API class in a proxy class.
